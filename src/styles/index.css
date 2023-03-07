@@ -10,3 +10,51 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
+body {
+    margin-top: 150px;
+}
+
+.card {
+    width: 50%;
+    margin-left: 25%;
+}
+
+ul li {
+    border: 1px solid grey;
+    list-style: none;
+    padding: 10px;
+}
+
+h1 {
+    text-align: center;
+}
+
+input {
+    border: none;
+    width: 100%;
+    padding: none;
+}
+
+  .no-outline:focus {
+    outline: none;
+  }
+
+
+.fa-times {
+    float: right;
+}
+
+ul {
+    padding:0%;
+    margin-bottom: 0%;
+}
+
+.footer {
+    color: grey;
+    font-size: small;
+    margin-left: 10px;
+}
+
+li:not(:hover) > .fa-times {
+    visibility: hidden;
+  }

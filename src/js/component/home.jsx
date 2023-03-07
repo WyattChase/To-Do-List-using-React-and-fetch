@@ -1,25 +1,43 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 //include images into your bundle
 import rigoImage from "../../img/rigo-baby.jpg";
 
-//create your first component
+//create your first component 
 const Home = () => {
+	const [inputValue, setInputValue ] = useState("")
+	const [todos, setTodos] = useState([])
+	const APIURL = "https://assets.breatheco.de/apis/fake/todos/user/wyattchase"
+	const getSampleTask = () => {
+		fetch(APIURL)
+			.then((response) => response.json())
+			.then((newTodo) => setTodos(newTodo))
+			.then((response) => console.log(response))
+	}
+	const updateURL = () => {
+		fetch(APIURL, {
+			method : 'PUT',
+			body : JSON.stringify(todos),
+			headers : {
+				"content-type" : "application/json"
+			}
+		}) .then((response) => response.json())
+	}
+
+	useEffect(() => {
+		getSampleTask()
+	},[])
+
+
 	return (
-		<div className="text-center">
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
-		</div>
+		<div className="container">
+			<div>
+				<form>
+					
+				</form>
+			</div>
+	</div>
+	
 	);
 };
 
