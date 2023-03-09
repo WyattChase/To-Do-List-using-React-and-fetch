@@ -12,11 +12,14 @@
 */
 body {
     margin-top: 150px;
+    background: green
 }
 
-.card {
-    width: 50%;
-    margin-left: 25%;
+.submit {
+    width: 60px;
+    height: 40px;
+
+
 }
 
 ul li {
@@ -35,7 +38,7 @@ input {
     padding: none;
 }
 
-  .no-outline:focus {
+#no-outline:focus {
     outline: none;
   }
 

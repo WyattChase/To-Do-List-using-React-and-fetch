@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { Form } from "./Form.jsx";
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
+
+
 
 //create your first component 
 const Home = () => {
@@ -32,9 +33,7 @@ const Home = () => {
 	return (
 		<div className="container">
 			<div>
-				<form>
-					
-				</form>
+				<Form />
 			</div>
 	</div>
 	
