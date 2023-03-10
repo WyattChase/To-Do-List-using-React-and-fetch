@@ -10,40 +10,66 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
+
 body {
     margin-top: 150px;
-    background: green
+    background: rgb(81, 14, 69)
 }
 
 .submit {
-    width: 60px;
-    height: 40px;
-
+    width: 55px;
+    height: 30px;
+    padding: 0%;
 
 }
+
+.todo {
+    width: 50%;
+    height: 40px;
+}
+
+.todo-item {
+    width: 75%;
+    height: 40px;
+    margin-top: 20px;
+}
+
+
 
 ul li {
     border: 1px solid grey;
     list-style: none;
+    background: white;
     padding: 10px;
+    display: inline-block;
 }
 
 h1 {
     text-align: center;
+    color: black;
+    background: greenyellow;
+    margin-bottom: 30px;
 }
+
 
 input {
     border: none;
-    width: 100%;
+    width: 50%;
     padding: none;
+    margin-left: 20%;
 }
 
-#no-outline:focus {
+.no-outline:focus {
     outline: none;
   }
 
+.complete-btn {
+    background: green;
+}
 
-.fa-times {
+
+
+/*.fa-times {
     float: right;
 }
 
@@ -60,4 +86,4 @@ ul {
 
 li:not(:hover) > .fa-times {
     visibility: hidden;
-  }
+  } */
