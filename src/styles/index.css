@@ -83,7 +83,7 @@ ul {
     font-size: small;
     margin-left: 10px;
 }
-
-li:not(:hover) > .fa-times {
+*/
+ul li:not(:hover) > .complete-btn {
     visibility: hidden;
-  } */
+  } 
