@@ -1,8 +1,10 @@
 import React from "react";
 
 export const List = ({ text, todo, todos, setTodos }) => {
-  const deleteHandler = () => {
-    setTodos(todos.filter((element) => {return element.id !== todo.id}));
+  const deleteHandler = (index) => {
+    let setTodos = {...todos}
+    setTodos.splice(index);
+    localStorage.setItem ('list', JSON.stringify(updatedURL));
     console.log(todos);
   };
   

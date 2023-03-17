@@ -84,6 +84,11 @@ ul {
     margin-left: 10px;
 }
 */
-ul li:not(:hover) > .complete-btn {
+.todo-context:not(:hover) > button {
     visibility: hidden;
   } 
+
+.completed {
+    text-decoration: line-through;
+    background-color: green;
+}
