@@ -9,9 +9,20 @@ export const Form = ({ todos, setTodos, input, setInput }) => {
 	const submitTodoHandler = (e) => {
 		e.preventDefault();
 		const newTodo = [...todos, { label: input, done: false }];
-		setTodos(newTodo);
-		setInput("");
+		fetch("https://assets.breatheco.de/apis/fake/todos/user/wyattchase",  {
+			method: "PUT",
+			body: JSON.stringify(todos),
+			headers: {
+				"Content-Type": "application/json",
+			}
+		}
+		)
+		.then((response) => {
+			response.status === 200 ? setTodos(newTodo) : ""
+		});
 	};
+
+
 
 	return (
 		<form>

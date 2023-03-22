@@ -1,16 +1,25 @@
 import React from "react";
 
 export const List = ({ text, todo, todos, setTodos }) => {
-  const deleteHandler = (index) => {
-    let setTodos = {...todos}
-    setTodos.splice(index);
-    localStorage.setItem ('list', JSON.stringify(updatedURL));
-    console.log(todos);
+  const deleteHandler = () => {
+    setTodos([])
+   
   };
-  
-  const removeItem = (todos, i) =>
-  todos.slice(0, i-1).concat(todos.slice(i, todos.length));
-
+  const deleteSingleHandler = (index) => {
+    console.log("Im going to work...")
+    const deleteTodo = todos.filter((element, i) => element !== todos.id) 
+		fetch("https://assets.breatheco.de/apis/fake/todos/user/wyattchase",  {
+			method: "PUT",
+			body: JSON.stringify(deleteTodo),
+			headers: {
+				"Content-Type": "application/json",
+			}
+		}
+		)
+		.then((response) => {
+			response.status === 200 ? setTodos(deleteTodo) : ""
+		});
+  }
   const completeHandler = () => {
     setTodos(
       todos.map((item) => {
@@ -28,6 +37,8 @@ export const List = ({ text, todo, todos, setTodos }) => {
         {todo.label}
       </li>
       <button className="complete-btn" onClick={completeHandler}><i className="fa fa-check-circle" aria-hidden="true"></i>
+</button>
+      <button className="delete-btn" onClick={deleteSingleHandler}><i className="fa fa-trash" aria-hidden="true"></i>
 </button>
       <button className="delete-btn" onClick={deleteHandler}><i className="fa fa-trash" aria-hidden="true"></i>
 </button>
