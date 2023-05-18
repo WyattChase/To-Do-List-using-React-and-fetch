@@ -2,8 +2,8 @@ import React from "react";
 
 export const List = ({ text, todo, todos, setTodos }) => {
 
-  const deleteSingleHandler = (index) => {
-    const deleteTodo = todos.filter((element, index) => element !== todo)
+  const deleteSingleHandler = () => {
+    const deleteTodo = todos.filter((element) => element !== todo)
 
 		fetch("https://assets.breatheco.de/apis/fake/todos/user/wyattchase",  {
 			method: "PUT",
@@ -20,7 +20,8 @@ export const List = ({ text, todo, todos, setTodos }) => {
   const completeHandler = () => {
     setTodos(
       todos.map((item) => {
-        if (item.id === todos.id) {
+        if (item === todo) {
+          console.log(todo);
           return { ...item, completed: !item.completed };
         }
         
@@ -30,8 +31,8 @@ export const List = ({ text, todo, todos, setTodos }) => {
   };
 
   return (
-    <div className="todo-context" key={todo}>
-      <li className={`todo-item ${todo.completed ? "completed" : ""}`}>
+    <div className="todo-context">
+      <li className={`todo-item ${todo.completed ? "completed" : ""}`} key={todo}>
         {todo.label}
       </li>
       <button className="complete-btn" onClick={completeHandler}><i className="fa fa-check-circle" aria-hidden="true"></i>

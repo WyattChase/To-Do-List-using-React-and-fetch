@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { icon } from "@fortawesome/fontawesome-svg-core";
+import { faDumpster } from "@fortawesome/free-solid-svg-icons";
+
 
 export const Form = ({ todos, setTodos, input, setInput }) => {
 	const inputTextHandler = (e) => {
@@ -69,7 +70,7 @@ export const Form = ({ todos, setTodos, input, setInput }) => {
 				onClick={deleteHandler}
 				className="delete"
 				type="Delete">
-				<FontAwesomeIcon icon="fa-regular fa-dumpster" />
+					<FontAwesomeIcon icon={faDumpster} />
 			</button>
 		</div>
 	);
