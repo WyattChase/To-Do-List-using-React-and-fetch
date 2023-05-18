@@ -14,7 +14,6 @@ const Home = () => {
 		fetch(APIURL)
 			.then((response) => response.json())
 			.then((newTodo) => setTodos(newTodo))
-			.then((response) => console.log(response));
 	};
 
 	const updateURL = () => {
